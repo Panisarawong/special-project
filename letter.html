@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>happy birthday p'ying</title>
+    <link rel="shortcut icon" href="#">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/letter.css">
+</head>
+<body>
+    <div class="wrapper">
+      <div class="lid one"></div>
+      <div class="lid two"></div>
+      <div class="envelope"></div>
+      <div class="letter">
+        <p>happy birthday<br>
+          wishing your 25th year to be filled with joy, money and anything you've been dreaming of. <br>
+          may you get closer to your goals every day, enjoy your new job and always be surrounded by supportive people.<br>
+          so lucky to have you in my life. <br> 
+          always love you and cheering you on kubb </p>
+          <!-- <img src="image.jpeg" alt="Birthday" class="letter-img"> -->
+      </div>
+    </div>
+    <script>
+      const letter = document.querySelector('.letter');
+      letter.addEventListener('click', () => {
+      letter.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

@@ -10,8 +10,11 @@
 </head>
 
 <body class="text-center">
-<h1>Happy Birthday Babe</h1>
-<h3>don’t forget to make a wish before blowing out the candle</h3>
+<nav class="navbar">
+    <a href="index.html"> </a>
+  </nav>
+<h1>happy birthday babe</h1>
+<h3>don’t forget to make a wish <br> before blowing out the candle</h3>
 <br>
 <!-- <button id="start">START (required on Chrome)</button> -->
 <button style="display: none" id="startconsoledebug">enable console logs</button>
@@ -33,23 +36,46 @@
 		</div>
 	</div>
 	<div class="text-center">
-		<h5 class="cake-off">Happy Birthday</h5>
-		<p class="cake-off">Wish you best</p>
 	</div>
 
 </div>
-<!--
+
 	<canvas id="meter" width="500" height="50"></canvas>
--->
 
-<script src="cake.js"></script>
-<script src="volume-meter.js"></script>
-<script src="audioDetectionConfig.js"></script>
-<script src="audioDetection.js"></script>
-<script src="audioStream.js"></script>
 
-<script src="demoAudioRecorder.js"></script>
-<script src="demoAudioDetectionListeners.js"></script>
-<script src="demo.js"></script>
+<script src="js/cake.js"></script>
+<script src="js/volume-meter.js"></script>
+<script src="js/audioDetectionConfig.js"></script>
+<script src="js/audioDetection.js"></script>
+<script src="js/audioStream.js"></script>
+
+<script src="js/demoAudioRecorder.js"></script>
+<script src="js/demoAudioDetectionListeners.js"></script>
+<script src="js/demo.js"></script>
+
+
+<script>
+  // เลือก element cake-holder
+  const cakeHolder = document.getElementById('cake-holder');
+
+  // สังเกตการเปลี่ยนแปลง class
+  const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+          if (mutation.attributeName === 'class') {
+              // ถ้า class มี "done" แสดงว่า cake-off ปรากฏ
+              if (cakeHolder.classList.contains('done')) {
+                  // รอ 1.5 วินาทีให้ animation จบ แล้วไปหน้าใหม่
+                  setTimeout(() => {
+                      window.location.href = 'letter.html'; // เปลี่ยนเป็นหน้าที่ต้องการ
+                  }, 1500);
+              }
+          }
+      });
+  });
+
+  // เริ่มสังเกต attribute class
+  observer.observe(cakeHolder, { attributes: true });
+</script>
+
 </body>
 </html>

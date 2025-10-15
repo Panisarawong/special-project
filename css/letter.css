@@ -1,0 +1,159 @@
+/* ปรับขนาด envelope/letter บนมือถือ */
+@media (max-width: 480px) {
+  .wrapper {
+    width: 90vw;   /* envelope กว้างเกือบเต็มหน้าจอ */
+    height: 180px; /* ลดความสูงให้พอดีมือถือ */
+  }
+
+  .letter {
+    width: 90%;    /* letter อยู่ใน envelope */
+    height: 80%;
+    font-size: 20px; /* ปรับตัวอักษรให้เล็กลง */
+  }
+
+  .letter.open {
+    width: 90vw;    /* fullscreen เกือบเต็มหน้าจอ */
+    height: 40vh;   /* สูงพอดีหน้าจอมือถือ */
+    font-size: 1.2rem; /* ขนาดตัวอักษรเหมาะสมกับมือถือ */
+  }
+
+  .letter p {
+    font-size: 20px; /* ปรับให้ข้อความอ่านง่าย */
+    padding: 10px;
+  }
+
+  /* ถ้ามีรูปใน letter */
+  .letter img.letter-img {
+    max-width: 70%;   /* ใหญ่ขึ้นเล็กน้อยแต่ไม่เกินหน้าจอ */
+    margin: 10px auto;
+  }
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Caveat', cursive;
+  background-color: #333;
+}
+
+.wrapper {
+  height: 200px;
+  width: 300px;
+  background-color: #e49bba;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+.lid {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-right: 150px solid transparent;
+  border-bottom: 100px solid transparent;
+  border-left: 150px solid transparent;
+  transform-origin: top;
+  transition: transform 0.25s linear;
+}
+
+/* Lid when closed */
+.lid.one {
+  border-top: 100px solid #e49bba;
+  transform: rotateX(0deg);
+  z-index: 3;
+  transition-delay: 0.75s;
+}
+
+/* Lid when opened */
+.lid.two {
+  border-top: 100px solid #c587a1;
+  transform: rotateX(90deg);
+  z-index: 1;
+  transition-delay: 0.5s;
+}
+
+.envelope {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-top: 100px solid transparent;
+  border-right: 150px solid #edbed2;
+  border-bottom: 100px solid #edbed2;
+  border-left: 150px solid #e1aec3;
+  z-index: 3;
+}
+
+.letter {
+  position: absolute;
+  top: 0;
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  border-radius: 6px;
+  z-index: 2;
+  transition: 0.5s;
+}
+
+.lid, .envelope {
+  pointer-events: none; 
+}
+.letter p {
+  text-align: left;
+    padding: 20px;
+  font-size: 24px;
+  margin-top: 30px;
+  color: #333;
+}
+
+.wrapper:hover .lid.one {
+    transform: rotateX(90deg);
+    transition-delay: 0s;
+}
+
+.wrapper:hover .lid.two {
+    transform: rotateX(180deg);
+    transition-delay: 0.25s;
+}
+
+.wrapper:hover .letter {
+  transform: translateY(-50px);
+  transition-delay: 0.5s;
+}
+
+.letter.open {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 60vw;
+  height: 30vh;
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  z-index: 999;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  font-size: 1.5rem;
+  overflow-y: auto;
+  background-color: #fff;
+}
+/* .letter img.letter-img {
+  display: block;
+  max-width: 20%;   
+  height: auto;     
+  margin: 10px 30px 10px auto; 
+  border-radius: 6px;
+} */

@@ -1,41 +1,76 @@
+/* เพิ่มด้านบนสุดของ CSS */
+:root {
+    --cake-scale: 1; /* default desktop */
+}
+
+/* scale สำหรับมือถือ */
+@media only screen and (max-width: 600px) {
+    :root {
+        --cake-scale: 0.7; /* ลดขนาดเหลือ 70% */
+    }
+}
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 50px;
+        margin-top: 60px;
+    }
+
+    h3 {
+        font-size: 35px;
+        margin-top: 10px;
+    }
+
+    body {
+        font-size: 50px;
+        margin: 10px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+}
+
 h1 {
     font-family: 'Caveat', cursive; 
-    font-size: 35px;                
+    font-size: 50px;                
     font-weight: 400;               
     color: white;                 
-    letter-spacing: 1px;  
-    align-items: center;         
-    margin-top: 80px;
+    letter-spacing: 1px; 
+    align-items: center;        
+    margin-top: 100px;
 }
 
 h3 {
     font-family: 'Caveat', cursive; 
-    font-size: 25px;                
+    font-size: 30px;                
     font-weight: 400;               
     color: white;                 
-    letter-spacing: 1px;  
-    align-items: center;         
+    letter-spacing: 1px; 
+    align-items: center;        
     margin-top: 20px;
 }
 
-@media (max-width: 600px) {
-    .cake {
-        position: static;
-        margin: 0 auto 20px auto;
-        display: block;
-        top: unset;
-        left: unset;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-size: 20px;
-        font-family: 'Caveat', cursive;
-        background-color: black;
-        color: white;
-        text-align: center;
-        margin: 30;
-    }
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* เรียงแนวตั้ง */
+  justify-content: center;
+  align-items: center;
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  margin: 40;
+}
 
         
 button {
@@ -80,7 +115,7 @@ button {
     }
 
     .cake {
-        position: absolute;
+        position: relative;
         width: 250px;
         height: 200px;
         top: 50%;

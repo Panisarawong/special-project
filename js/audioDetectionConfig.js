@@ -125,7 +125,7 @@ silence (background noise)
 mute (microphone off)
 
 */
-const VOLUME_SIGNAL = 0.02
+const VOLUME_SIGNAL = 0.05
 const VOLUME_SILENCE = 0.001
 const VOLUME_MUTE = 0.0001
 

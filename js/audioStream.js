@@ -1,3 +1,10 @@
+navigator.mediaDevices.getUserMedia({ audio: true })
+  .then(function(stream) {
+    audioStream(stream); 
+  })
+  .catch(function(err) {
+    console.error('Microphone access denied:', err);
+  });
 
 var mediaStreamSource = null
 
