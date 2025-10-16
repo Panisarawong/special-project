@@ -12,8 +12,8 @@
   }
 
   .letter.open {
-    width: 110vw;    /* fullscreen เกือบเต็มหน้าจอ */
-    height: 30vh;   /* สูงพอดีหน้าจอมือถือ */
+    width: 120vw;    /* fullscreen เกือบเต็มหน้าจอ */
+    height: 40vh;   /* สูงพอดีหน้าจอมือถือ */
     font-size: 1.2rem; /* ขนาดตัวอักษรเหมาะสมกับมือถือ */
   }
 
