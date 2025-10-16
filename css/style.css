@@ -6,7 +6,7 @@
 /* scale สำหรับมือถือ */
 @media only screen and (max-width: 600px) {
     :root {
-        --cake-scale: 0.7; /* ลดขนาดเหลือ 70% */
+        --cake-scale: 0.9; /* ลดขนาดเหลือ 70% */
     }
 }
 @media only screen and (max-width: 600px) {
@@ -16,7 +16,7 @@
     }
 
     h3 {
-        font-size: 35px;
+        font-size: 25px;
         margin-top: 10px;
     }
 
@@ -44,7 +44,7 @@ h1 {
 h3 {
     font-family: 'Caveat', cursive; 
     font-size: 30px;                
-    font-weight: 400;               
+    font-weight: 300;               
     color: white;                 
     letter-spacing: 1px; 
     align-items: center;        

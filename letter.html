@@ -15,17 +15,26 @@
       <div class="letter">
         <p>happy birthday<br>
           wishing your 25th year to be filled with joy, money and anything you've been dreaming of. <br>
-          may you get closer to your goals every day, enjoy your new job and always be surrounded by supportive people.<br>
-          so lucky to have you in my life. <br> 
-          always love you and cheering you on kubb </p>
-          <!-- <img src="image.jpeg" alt="Birthday" class="letter-img"> -->
+          may you get closer to your goals every day, enjoy your new job and always be surrounded by supportive (and nontoxic) people.<br>
+          wishing you the best and always love you kubb </p>
+          <!-- <-- <img src="image.jpeg" alt="Birthday" class="letter-img"> -->
       </div>
     </div>
     <script>
       const letter = document.querySelector('.letter');
+      const wrapper = document.querySelector('.wrapper');
+
       letter.addEventListener('click', () => {
-      letter.classList.toggle('open');
-    });
-  </script>
+        if (!letter.classList.contains('open')) {
+          // เปิด: ย้ายออกจาก wrapper
+          document.body.appendChild(letter);
+          letter.classList.add('open');
+        } else {
+          // ปิด: ย้ายกลับเข้าไปในซอง
+          wrapper.appendChild(letter);
+          letter.classList.remove('open');
+        }
+      });
+    </script>
 </body>
 </html>

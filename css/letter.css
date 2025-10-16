@@ -13,7 +13,7 @@
 
   .letter.open {
     width: 90vw;    /* fullscreen เกือบเต็มหน้าจอ */
-    height: 40vh;   /* สูงพอดีหน้าจอมือถือ */
+    height: 30vh;   /* สูงพอดีหน้าจอมือถือ */
     font-size: 1.2rem; /* ขนาดตัวอักษรเหมาะสมกับมือถือ */
   }
 
@@ -29,6 +29,16 @@
   }
 }
 
+@media (max-width: 480px) {
+  .letter.open {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: 90vw;
+    height: 40vh;
+    transform: none !important;
+  }
+}
 
 * {
   margin: 0;
@@ -138,11 +148,10 @@ body {
 
 .letter.open {
   position: fixed;
-  inset: 0;
   top: 50%;
   left: 50%;
   width: 60vw;
-  height: 30vh;
+  height: 25vh;
   transform: translate(-50%, -50%);
   border-radius: 6px;
   z-index: 999;
