@@ -138,6 +138,7 @@ body {
 
 .letter.open {
   position: fixed;
+  inset: 0;
   top: 50%;
   left: 50%;
   width: 60vw;
